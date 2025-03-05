@@ -1,0 +1,317 @@
+.chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* Botão de chat para mobile */
+.mobile-chat-button {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #3D56A5;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* Modal de chat (ajustável para mobile) */
+.modal-chat {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 340px;
+  height: 480px;
+  background-color: var(--dark-color);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.modal-chat.active {
+  display: flex;
+}
+
+/* Backdrop para quando o modal mobile estiver aberto */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-backdrop.active {
+  display: block;
+}
+
+.cont-chat {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: transform var(--transition-speed);
+}
+
+.cont-chat:hover {
+  transform: scale(1.05);
+  background: var(--secondary-color);
+}
+
+.btn-chat {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+/* Ícone de chat (bolhas de mensagem) */
+.btn-chat::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--text-color);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  top: 5px;
+  left: 5px;
+}
+
+.btn-chat::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--text-color);
+  border-radius: 50% 50% 0 50%;
+  transform: rotate(-45deg);
+  bottom: 5px;
+  right: 5px;
+}
+
+/* Modal de chat */
+.modal-chat {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 340px;
+  height: 480px;
+  background-color: var(--dark-color);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.modal-chat.active {
+  display: flex;
+}
+
+/* Cabeçalho do modal */
+.modal-header {
+  background-color: #3D56A5;
+  color: var(--text-color);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Área das mensagens */
+.chat-messages {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-image: url(../images/fundo-chat.png);
+}
+
+/* Animação de fade nas mensagens */
+.message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  word-wrap: break-word;
+  opacity: 0;
+  animation: fade-in 1s forwards;
+}
+
+/* Animação de fade */
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.message-bot {
+  background-color: white;
+  color: var(--cinza-color);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.message-user {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+/* Indicador de digitação */
+.typing-indicator {
+  display: none;
+  align-self: flex-start;
+}
+
+.typing-indicator span {
+  height: 8px;
+  width: 8px;
+  background-color: #3D56A5;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px;
+  animation: bounce 1.3s linear infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Área de entrada de mensagem */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #3D56A5;
+  background-color: var(--dark-color);
+}
+
+.chat-input input {
+  flex-grow: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-family: var(--font-primary);
+  outline: none;
+}
+
+.chat-input input:focus {
+  border-color: var(--primary-color);
+}
+
+.send-btn {
+  background-color: #3D56A5;
+  color: var(--text-color);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color var(--transition-speed);
+}
+
+.send-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Links de contato */
+.contact-link {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Botões de opções */
+.option-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.option-btn {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  font-family: var(--font-primary);
+}
+
+.option-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+/* Esconde o scrollbar para uma aparência mais limpa */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}

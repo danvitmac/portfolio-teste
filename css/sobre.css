@@ -1,0 +1,112 @@
+.sobre-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+  z-index: -1; /* Mantém o fundo atrás do conteúdo */
+}
+
+.fundo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.sobre {
+  position: relative; /* Mantém o conteúdo acima do fundo */
+  z-index: 1; /* Garante que a seção do sobre fique na frente */
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  padding: 3rem;
+}
+
+
+.sobre-cont{
+  display: flex;
+  width:500px;
+  height: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.textos {
+  position: relative;
+  max-width: 50%;
+  text-align: left;
+}
+
+.sobre-titulo {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.sobre .titulo {
+  font-family: var(--font-secondary);
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: 600;
+}
+.sobre .cont-titulo{
+  padding: 10px;
+}
+
+.sobre .sub {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 10px;
+  width: 400px;
+}
+
+
+
+.fin {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrossel {
+  position: relative;
+}
+
+.carrossel .imagens {
+  top: 0;
+  height: auto;
+  display: flex;
+  justify-content: right;
+}
+
+.carrossel .imagens img {
+  position: absolute;
+  width: 60px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  filter: blur(1px);
+}
+
+.carrossel .imagens img.active {
+  opacity: 1;
+}
+.sobre .eu img{
+  width: 300px;
+}

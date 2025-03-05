@@ -1,0 +1,68 @@
+/* Reset de estilos e formatação geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+/* Cores e fontes */
+:root {
+  --primary-color: rgba(108, 132, 208, 1);
+  --secondary-color: rgba(88, 108, 170, 1);
+  --new-color: rgb(61, 86, 165);
+  --dark-color: rgba(34, 34, 34, 1);
+  --cinza-color: rgb(65, 65, 65);
+  --text-color: white;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+  --transition-speed: 0.3s;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+  
+  /* Estilos do corpo e fontes */
+  body {
+    background-color: var(--dark-color);
+    font-family: var(--font-primary);
+  }
+  
+  /* Estilos do scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(40, 60, 100, 0.5);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Estilos para o canvas de fundo */
+  canvas#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Estilos da classe background */
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  

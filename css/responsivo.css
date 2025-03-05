@@ -1,0 +1,504 @@
+/* Ajuste para esconder o botão original e mostrar o botão mobile em telas menores */
+@media (max-width: 480px) {
+  .chat {
+    display: none; /* Esconde o botão circular em telas pequenas */
+  }
+  
+  /* Mostra a barra de chat fixa no mobile */
+  .mobile-chat-button {
+    display: block;
+    border-radius:10px;
+    width: 80%;
+  }
+  
+
+  .message {
+    max-width: 85%;
+  }
+}
+
+/* Ajustes específicos para iPhone SE e outros dispositivos muito pequenos */
+@media (min-width: 320px) and (max-width:400px) {
+  .mobile-chat-button {
+    width: 62%;
+  }
+  .chat-messages {
+    padding: 10px;
+  }
+  
+  .message {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .modal-header {
+    padding: 12px;
+  }
+  
+  .modal-header h3 {
+    font-size: 15px;
+  }
+}
+
+
+@media (min-width: 375px) and (max-width:400px) {
+  .modal-content{
+    width: 60%;
+    right: 15%;
+  }
+}
+@media (min-width: 480px) and (max-width:500px) {
+  .modal-content{
+    width: 75%;
+    right: 10%;
+  }
+}
+
+/* Para dispositivos com tela muito pequena em altura */
+@media (max-height: 500px) {
+  .modal-chat {
+    height: 85vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .chat-messages {
+    padding: 8px;
+  }
+  
+  .message {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Ajustes para tablets e dispositivos médios */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .modal-chat {
+    width: 340px;
+    height: 480px;
+    bottom: 80px;
+    right: 15px;
+  }
+}
+
+/* Dispositivos móveis (landscape) */
+@media (max-width: 767px) and (orientation: landscape) {
+  .modal-chat {
+    width: 340px;
+    height: 85vh; /* Usando altura relativa para modo paisagem */
+    bottom: 70px;
+    right: 10px;
+  }
+}
+
+/* Grandes dispositivos (desktops e laptops) */
+@media (min-width: 1025px) {
+  .modal-chat {
+    width: 380px;
+    height: 520px;
+    bottom: 90px;
+    right: 20px;
+  }
+}
+/* Tab Bar
+ Animada para Mobile e Tablet */
+@media screen and (max-width: 480px) {
+  .nav{
+    display: none;
+  }
+  .logo-text {
+    display: none;
+  }
+  .sub{
+    text-align: left;
+    width: 200px;
+  }
+  .social_icons{
+    margin-left: 10%;
+  }
+  .project-description{
+    font-size: 11px;
+  }
+  .logo-text-2 {
+    display: flex;
+  }
+  .inicio .sub{
+    margin-left: 10%;
+  }
+  .logo-cont {
+    display: flex;
+    justify-content: center;
+  }
+  .sobre .sub{
+    width: 200px;
+  }
+  .nav-list {
+    width: 100%;
+    justify-content: space-around;
+    gap: 0;
+    padding: 0 15px;
+  }
+
+  .nav-list li {
+    position: relative;
+  }
+
+  .nav-list a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  /* Estilo para ícones - apenas visíveis no mobile */
+  .nav-list a i {
+    font-size: 20px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  /* Adicionar efeito de destaque nos itens ativos (opcional) */
+  .nav-list a.active,
+  .nav-list a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Indicador de item ativo (opcional) */
+  .nav-list a.active::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+  }
+
+  /* Ajuste para o menor mobile */
+  @media screen and (max-width: 480px) {
+    .nav {
+      padding: 8px 0; /* Reduzir o padding para evitar sobrecarga */
+    }
+    
+    .nav-list a {
+      padding: 10px;
+      font-size: 10px; /* Ajustar o tamanho da fonte */
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav{
+    display: none;
+    
+  }
+  .logo-text-2{
+      display: flex;
+    }
+    .logo-cont{
+      display: flex;
+      justify-content: center;
+    }
+}
+/* Ajustes para tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .nav {
+    width: 90%;
+  }
+}
+
+/* Tablet */
+@media screen  and  (max-width: 1024px) {
+  .inicio {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    margin-top: 10%;
+  }
+
+  .img-logo {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .img-logo img {
+    width: 150px;
+  }
+
+  .text-inicio {
+    font-size: 40px;
+  }
+
+  .sub {
+    font-size: 16px;
+  }
+
+  .social_icons {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .inicio {
+    margin-top: 5%;
+    padding: 0 15px;
+  }
+
+  .img-logo img {
+    width: 120px;
+  }
+
+  .text-inicio {
+    font-size: 32px;
+  }
+
+  .sub {
+    font-size: 14px;
+  }
+}
+
+/* Ajuste adicional para telas muito pequenas */
+@media screen and (max-width: 380px) {
+  .img-logo img {
+    width: 100px;
+  }
+
+  .text-inicio {
+    font-size: 28px;
+  }
+}
+
+/* Ajustes gerais para dispositivos móveis */
+@media (max-width: 768px) {
+  .inicio {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .textos {
+    max-width: 90%;
+  }
+
+  .text-inicio {
+    font-size: 1.8rem;
+  }
+
+  .sobre.sub {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    width: 200px;
+  }
+
+  .social_icons {
+    gap: 0.8rem;
+  }
+
+  .social_icons .icon {
+    font-size: 1.2rem;
+  }
+}
+
+/* Ajustes específicos para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+  .inicio {
+    padding: 1rem;
+  }
+  .sobre{
+    flex-direction: column;
+  }
+  .eu{
+    margin-left:20%;
+  }
+  .text-inicio {
+    font-size: 1.5rem;
+    margin-left: 10%;
+  }
+
+  .sobre.sub {
+    font-size: 0.8rem;
+  }
+
+  .social_icons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .social_icons .icon {
+    font-size: 1rem;
+  }
+}
+
+/* Ajustes no carrossel para telas menores */
+@media (max-width: 768px) {
+  .sobre {
+    padding: 1.5rem;
+    height: 100%;
+    margin-top: 70%;
+  }
+  .carrossel {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 1rem;
+  }
+
+  .carrossel .imagens img {
+    max-width: 150px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .carrossel {
+    max-width: 240px;
+    margin-right: 24%;
+  }
+
+  .carrossel .imagens img {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .text-proj .titulo {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .email,
+  .contact-card {
+    padding: 2rem;
+  }
+
+  .email h2,
+  .contact-card h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  footer.logo-text {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .logo-text {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* Media query para mobile (até 480px) */
+@media (max-width: 480px) {
+  /* Esconde o botão circular em telas pequenas */
+  .chat {
+    display: none;
+  }
+  /* Mostra a barra de chat fixa no mobile */
+  .mobile-chat-button {
+    display: block;
+  }
+  
+  .modal-chat {
+    top: 30%;
+    left: 10%;
+    bottom: auto;
+    right: auto;
+    width: 60%;
+    height: 50%;
+  }
+
+  .chat {
+    display: none;
+  }
+
+  .mobile-chat-button {
+    display: block;
+  }
+}
+
+  /* Ajustes para a altura em telas muito pequenas */
+  @media (max-height: 500px) {
+    .modal-chat-mobile {
+      height: 70vh;
+    }
+    
+    .chat-messages {
+      padding: 10px;
+    }
+    
+    .message {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+  }

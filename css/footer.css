@@ -1,0 +1,161 @@
+/* Footer Styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+  backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+  color: var(--text-color);
+  font-family: var(--font-secondary);
+  padding: 4rem 0 1rem;
+  border-top: 1px solid rgba(61, 86, 165, 0.3); /* Borda sutil com a cor azul */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 0.5rem;
+  text-shadow: 0 0 15px rgba(108, 132, 208, 0.5); /* Glow sutil */
+}
+
+.footer-tagline {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(61, 86, 165, 0.2); /* Azul transparente */
+  color: var(--text-color);
+  transition: all var(--transition-speed) ease;
+  border: none; /* Garantir que não há bordas */
+  outline: none; /* Remover outline */
+  text-decoration: none; /* Remover sublinhado */
+  box-shadow: none; /* Remover sombras */
+}
+
+.footer-social a:hover {
+  background: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(108, 132, 208, 0.5); /* Glow ao passar o mouse */
+  border: none; /* Garantir que não há bordas no hover */
+  outline: none; /* Remover outline no hover */
+}
+
+/* Garantir que os ícones não têm bordas ou linhas */
+.footer-social a i {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.footer-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-links-column {
+  min-width: 160px;
+}
+
+.footer-links-column h3 {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  color: var(--primary-color);
+  /* Removido o pseudo-elemento ::after que criava a linha */
+}
+
+.footer-links-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-column li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-links-column a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all var(--transition-speed) ease;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 0;
+  border: none; /* Garantir que não há bordas */
+  outline: none; /* Remover outline */
+}
+
+.footer-links-column a:hover {
+  color: var(--primary-color);
+  padding-left: 5px;
+  text-shadow: 0 0 8px rgba(108, 132, 208, 0.5); /* Glow sutil */
+  border: none; /* Garantir que não há bordas no hover */
+  outline: none; /* Remover outline no hover */
+}
+
+/* Remover qualquer linha de todos os links no footer */
+.footer-links-column a::after,
+.footer-links-column a::before {
+  display: none !important; /* Forçar a remoção de qualquer pseudo-elemento */
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(61, 86, 165, 0.2); /* Borda sutil com a cor azul */
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer-brand {
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .footer-links-container {
+    justify-content: space-around;
+  }
+}
